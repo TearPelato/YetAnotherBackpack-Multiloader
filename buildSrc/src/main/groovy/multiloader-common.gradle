@@ -13,6 +13,14 @@ java {
     withJavadocJar()
 }
 
+def getGprUser() {
+    return project.findProperty('gpr.user') ?: System.getenv("GPR_USER")
+}
+
+def getGprKey() {
+    return project.findProperty('gpr.key') ?: System.getenv("GPR_KEY")
+}
+
 repositories {
     mavenCentral()
     // https://docs.gradle.org/current/userguide/declaring_repositories.html#declaring_content_exclusively_found_in_one_repository
@@ -39,6 +47,19 @@ repositories {
     maven {
         name = 'BlameJared'
         url = 'https://maven.blamejared.com'
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "MrCrayfish GitHub"
+                url = uri("https://maven.pkg.github.com/MrCrayfish/Maven")
+                credentials {
+                    username = getGprUser()
+                    password = getGprKey()
+                }
+            }
+        }
+        filter { includeGroup("com.mrcrayfish") }
     }
 }
 

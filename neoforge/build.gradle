@@ -36,4 +36,22 @@ neoForge {
     }
 }
 
-sourceSets.main.resources { srcDir 'src/generated/resources' }
+repositories {
+    repositories {
+        maven {
+            url "https://cursemaven.com"
+            content {
+                includeGroup "curse.maven"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neoforge_version}"
+    implementation "com.mrcrayfish:framework-neoforge:${minecraft_version}-${framework_version}"
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
+}
