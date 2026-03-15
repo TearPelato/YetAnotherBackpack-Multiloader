@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "backpack_mod:item/crafting_upgrade"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "backpack_mod:texture_variant": 1.0
+      },
+      "model": "backpack_mod:item/crafting_upgrade_2"
+    }
+  ]
+}

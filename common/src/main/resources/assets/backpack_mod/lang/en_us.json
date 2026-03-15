@@ -1,0 +1,76 @@
+{
+  "item.backpack_mod.backpack": "Backpack",
+  "item.backpack_mod.copper_backpack": "Copper Backpack",
+  "item.backpack_mod.iron_backpack": "Iron Backpack",
+  "item.backpack_mod.gold_backpack": "Gold Backpack",
+  "item.backpack_mod.diamond_backpack": "Diamond Backpack",
+  "item.backpack_mod.netherite_backpack": "Netherite Backpack",
+  "item.backpack_mod.toolswap_upgrade": "ToolSwap Upgrade",
+  "item.backpack_mod.crafting_upgrade": "Crafting Upgrade",
+  "item.backpack_mod.furnace_upgrade": "Furnace Upgrade",
+  "item.backpack_mod.blast_upgrade": "Blast Upgrade",
+  "item.backpack_mod.smoker_upgrade": "Smoker Upgrade",
+  "item.backpack_mod.upgrade_base": "Upgrade Base",
+  "item.backpack_mod.stack_upgrade": "Base Stack Upgrade",
+  "item.backpack_mod.iron_stack_upgrade": "Iron Stack Upgrade",
+  "item.backpack_mod.gold_stack_upgrade": "Gold Stack Upgrade",
+  "item.backpack_mod.diamond_stack_upgrade": "Diamond Stack Upgrade",
+  "item.backpack_mod.netherite_stack_upgrade": "Netherite Stack Upgrade",
+  "item.backpack_mod.feed_upgrade": "Feed Upgrade",
+  "item.backpack_mod.magnet_upgrade": "Magnet Upgrade",
+
+
+  "key.backpack_mod.open_backpack": "Open Backpack",
+  "key.category.backpack_mod.backpack": "Yet Another Backpack Category",
+
+
+  "message.backpack_mod.no_backpack":"No Backpacks Found",
+
+
+  "advancements.backpack_mod.craft_backpack": "Craft a Backpack",
+  "advancements.backpack_mod.craft_backpack_desc": "Craft a backpack, expand your inventory!",
+  "advancements.backpack_mod.backpack_title": "Yet Another Backpack Advancements",
+
+
+  "backpack_mod.widget.crafting.title": "Craft",
+  "backpack_mod.widget.furnace.title": "Smelt",
+  "backpack_mod.widget.blast.title" : "Blast",
+  "backpack_mod.widget.smoker.title" : "Smoker",
+  "backpack_mod.widget.toolswap.title": "ToolSwap",
+  "backpack_mod.widget.toggle.enabled": "Enabled",
+  "backpack_mod.widget.toggle.disabled": "Disabled",
+
+  "backpack_mod.configuration.crafting_upgrade.title": "Crafting Upgrade",
+  "backpack_mod.configuration.crafting_upgrade": "Crafting Upgrade",
+  "backpack_mod.configuration.textureVariant": "Texture Variant",
+  "backpack_mod.configuration.rendering": "Backpack Rendering",
+  "backpack_mod.rendering.show_with_elytra.title": "Show With Elytra",
+  "backpack_mod.rendering.show_with_cape.title": "Show With Cape",
+
+  "backpack_mod.tooltip.item.backpack.tier.base": "Tier ->  §4Base",
+  "backpack_mod.tooltip.item.backpack.tier.copper": "Tier ->  §cCopper",
+  "backpack_mod.tooltip.item.backpack.tier.iron": "Tier -> §7Iron",
+  "backpack_mod.tooltip.item.backpack.tier.gold": "Tier -> §6Gold",
+  "backpack_mod.tooltip.item.backpack.tier.diamond": "Tier -> §bDiamond",
+  "backpack_mod.tooltip.item.backpack.tier.netherite": "Tier -> §8Netherite",
+  "backpack_mod.tooltip.item.backpack": "Hold §eShift§r",
+
+  "backpack_mod.gui.backpack.button.sort.tooltip": "Sort Backpack",
+  "gui.backpack_mod.button.sort.sort_mode_swapper": "MIDDLE BUTTON to change sort mode",
+  "gui.backpack_mod.button.sort.mode.alphabetical": "Alphabetical",
+  "gui.backpack_mod.button.sort.mode.stack_size": "Stack Size",
+  "gui.backpack_mod.button.sort.mode.mod": "Mod ID",
+  "gui.backpack_mod.button.sort.mode.most_damaged": "Most Damaged Items",
+  "gui.backpack_mod.button.sort.mode.shuffle": "Shuffle",
+  "gui.backpack_mod.button.settings.tooltip": "Settings",
+  "gui.backpack_mod.button_gui.settings.title": "Backpack Settings",
+  "gui.backpack_mod.button.search.title": "Search",
+ "gui.backpack_mod.widget.search_box.search_hint": "Search...",
+  "gui.backpack_mod.widget.magnet.title": "Magnet Settings",
+  "gui.backpack_mod.widget.remove_upgrade": "Remove Upgrade",
+  "gui.backpack_mod.settings.title": "Backpack Settings",
+  "gui.backpack_mod.button.back": "Back",
+
+  "container.backpack_mod.backpack": "Backpack",
+  "creativetab.backpack_mod.backpacks":"Backpack Tab"
+}
