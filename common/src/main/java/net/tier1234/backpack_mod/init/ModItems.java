@@ -10,19 +10,19 @@ import net.tier1234.backpack_mod.item.BackpackItem;
 @RegistryContainer
 public class ModItems {
 
-    public static final RegistryEntry<Item> BACKPACK_LEATHER = RegistryEntry.item(Constants.id("backpack_leather"),
+    public static final RegistryEntry<Item> BACKPACK_LEATHER = RegistryEntry.item(Constants.id("backpack"),
             () -> new BackpackItem(BackpackTier.TIER_1,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryEntry<Item> BACKPACK_IRON = RegistryEntry.item(Constants.id("backpack_iron"),
+    public static final RegistryEntry<Item> BACKPACK_IRON = RegistryEntry.item(Constants.id("iron_backpack"),
             () -> new BackpackItem(BackpackTier.TIER_2,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryEntry<Item> BACKPACK_GOLD = RegistryEntry.item(Constants.id("backpack_gold"),
+    public static final RegistryEntry<Item> BACKPACK_GOLD = RegistryEntry.item(Constants.id("gold_backpack"),
             () -> new BackpackItem(BackpackTier.TIER_3,new Item.Properties().stacksTo(1)));
 
-    public static final RegistryEntry<Item> BACKPACK_DIAMOND = RegistryEntry.item(Constants.id("backpack_diamond"),
+    public static final RegistryEntry<Item> BACKPACK_DIAMOND = RegistryEntry.item(Constants.id("diamond_backpack"),
             () -> new BackpackItem(BackpackTier.TIER_4,new Item.Properties().stacksTo(1)));
 
-  /*  public static final RegistryEntry<Item> BACKPACK_NETHERITE = RegistryEntry.item(Constants.id("backpack_netherite"),
+  /*  public static final RegistryEntry<Item> BACKPACK_NETHERITE = RegistryEntry.item(Constants.id("netherite_backpack"),
             () -> new BackpackItem(BackpackTier.TIER_5,new Item.Properties().stacksTo(1)));
 */
 
