@@ -65,7 +65,7 @@
   "gui.backpack_mod.button.settings.tooltip": "Settings",
   "gui.backpack_mod.button_gui.settings.title": "Backpack Settings",
   "gui.backpack_mod.button.search.title": "Search",
- "gui.backpack_mod.widget.search_box.search_hint": "Search...",
+  "gui.backpack_mod.widget.search_box.search_hint": "Search...",
   "gui.backpack_mod.widget.magnet.title": "Magnet Settings",
   "gui.backpack_mod.widget.remove_upgrade": "Remove Upgrade",
   "gui.backpack_mod.settings.title": "Backpack Settings",

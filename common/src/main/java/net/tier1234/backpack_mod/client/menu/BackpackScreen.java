@@ -53,7 +53,10 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackMenu> {
 
         this.imageWidth = mainPanelW + sideW;
         this.imageHeight = menu.getGuiHeight();
-        this.inventoryLabelY = imageHeight - 94;
+
+        int visibleRows = (tier == BackpackTier.TIER_4) ? TIER4_VISIBLE_ROWS : menu.getInventoryRows();
+        this.titleLabelY = 6;
+        this.inventoryLabelY = 18 + visibleRows * SLOT_SIZE + 3;
     }
 
     @Override
@@ -68,7 +71,7 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackMenu> {
 
         int mainW = mainPanelWidth(tier);
         upgradeColX = leftPos + mainW + UPGRADE_SIDE_GAP;
-        upgradeColY = topPos + 18;
+        upgradeColY = topPos + 18 + 4;
 
         upgradeButtons.clear();
         for (int i = 0; i < tier.getUpgradeSlots(); i++) {
@@ -157,21 +160,6 @@ public class BackpackScreen extends AbstractContainerScreen<BackpackMenu> {
         int thumbY = scrollbarY + (maxScroll == 0 ? 0 : (offset * (scrollbarH - thumbH)) / maxScroll);
 
         g.fill(scrollbarX, thumbY, scrollbarX + 4, thumbY + thumbH, 0xFFAAAAAA);
-    }
-
-    @Override
-    protected void renderLabels(GuiGraphics g, int mouseX, int mouseY) {
-        BackpackTier tier = menu.getTier();
-        int rows = menu.getInventoryRows();
-        int upgradeY = 18 + rows * SLOT_SIZE + 8;
-        int playerInvY = upgradeY + SLOT_SIZE + 8;
-
-        g.drawString(font, playerInventoryTitle, 8, playerInvY - 2, 0x404040, false);
-        if (tier.getUpgradeSlots() > 0) {
-            g.drawString(font,
-                    Component.translatable("gui.backpackmod.upgrades"),
-                    8, upgradeY - 10, 0x404040, false);
-        }
     }
 
     @Override

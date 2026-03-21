@@ -56,7 +56,8 @@ public class BackpackMenu extends AbstractContainerMenu {
         int slotIndex = extraData.readInt();
 
         BackpackTier resolvedTier = BackpackTier.fromIndex(tierIndex);
-        ItemStack stack = playerInventory.player.getInventory().getItem(slotIndex);
+
+        ItemStack stack = playerInventory.getItem(slotIndex);
 
         this.backpackInventory = new BackpackInventory(stack, resolvedTier);
         this.upgradeInventory = new BackpackUpgradeInventory(stack, resolvedTier);
@@ -71,11 +72,6 @@ public class BackpackMenu extends AbstractContainerMenu {
         this.guiHeight = computeGuiHeight();
     }
 
-    private int computeGuiHeight() {
-        // Per tier 4 usiamo TIER4_VISIBLE_ROWS come altezza visiva, non inventoryRows
-        int visibleRows = (tier == BackpackTier.TIER_4) ? TIER4_VISIBLE_ROWS : inventoryRows;
-        return 18 + visibleRows * SLOT_SIZE + 4 + 3 * SLOT_SIZE + 4 + SLOT_SIZE;
-    }
 
     private void addBackpackSlots() {
         if (tier == BackpackTier.TIER_4) {
@@ -102,24 +98,27 @@ public class BackpackMenu extends AbstractContainerMenu {
     }
 
     private void addUpgradeSlots() {
-        // Gli slot upgrade stanno a destra del pannello principale.
-        // La X è calcolata uguale a upgradeColX nella Screen:
-        // mainPanelWidth + UPGRADE_SIDE_GAP + centro del slot (4px per centrare in 26px)
         int mainPanelW = mainPanelWidth();
         int upgradeGap = 4;
         int upgradeSlotSize = 26;
-        int upgradeX = mainPanelW + upgradeGap + (upgradeSlotSize - SLOT_SIZE) / 2; // centra il slot 18px dentro il bg 26px
-        int upgradeStartY = 18 + 4; // piccolo margine dal bordo superiore
+        int upgradeX = mainPanelW + upgradeGap + (upgradeSlotSize - SLOT_SIZE) / 2;
+        int upgradeStartY = 18 + 4 + (upgradeSlotSize - SLOT_SIZE) / 2;
 
         for (int i = 0; i < tier.getUpgradeSlots(); i++) {
-            int slotY = upgradeStartY + i * (upgradeSlotSize + 2) + (upgradeSlotSize - SLOT_SIZE) / 2;
+            int slotY = upgradeStartY + i * (upgradeSlotSize + 2);
             addSlot(new Slot(upgradeInventory, i, upgradeX, slotY));
         }
     }
 
+    private int computeGuiHeight() {
+        int visibleRows = (tier == BackpackTier.TIER_4) ? TIER4_VISIBLE_ROWS : inventoryRows;
+        // 18 top + backpack + 14 gap (label "Inventory" ~10px + 4px margin) + 3 righe player + 4 gap + hotbar + 7 bottom
+        return 18 + visibleRows * SLOT_SIZE + 14 + 3 * SLOT_SIZE + 4 + SLOT_SIZE + 7;
+    }
+
     private void addPlayerInventory(Inventory playerInventory) {
         int visibleRows = (tier == BackpackTier.TIER_4) ? TIER4_VISIBLE_ROWS : inventoryRows;
-        int playerInvStartY = 18 + visibleRows * SLOT_SIZE + 8 + SLOT_SIZE + 8;
+        int playerInvStartY = 18 + visibleRows * SLOT_SIZE + 14;
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 9; col++) {
                 addSlot(new Slot(playerInventory,
@@ -132,7 +131,7 @@ public class BackpackMenu extends AbstractContainerMenu {
 
     private void addPlayerHotbar(Inventory playerInventory) {
         int visibleRows = (tier == BackpackTier.TIER_4) ? TIER4_VISIBLE_ROWS : inventoryRows;
-        int hotbarY = 18 + visibleRows * SLOT_SIZE + 8 + SLOT_SIZE + 8 + 3 * SLOT_SIZE + 4;
+        int hotbarY = 18 + visibleRows * SLOT_SIZE + 14 + 3 * SLOT_SIZE + 4;
         for (int col = 0; col < 9; col++) {
             addSlot(new Slot(playerInventory,
                     col,
