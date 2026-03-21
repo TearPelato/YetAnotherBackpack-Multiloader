@@ -31,5 +31,12 @@
   },
   "suggests": {
     "another-mod": "*"
+  },
+  "custom": {
+    "framework": {
+      "containers": [
+        "net.tier1234.backpack_mod.init"
+      ]
+    }
   }
 }
